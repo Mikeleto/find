@@ -10,7 +10,7 @@ class Application
 {
     public function __construct()
     {
-        $url = this->separarUrl();
+         $url = $this->separarURL();
     }
 
     public function separarUrl(){
