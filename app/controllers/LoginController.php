@@ -22,4 +22,9 @@ class loginController extends Controller{
         ];
         $this->view('register',$data);
     }
+
+    public function olvido()
+    {
+        echo "Estoy en el método olvido";
+    }
 }
