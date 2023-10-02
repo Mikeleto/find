@@ -8,7 +8,10 @@ class loginController extends Controller{
     }
 
     public function index(){
-        $data = [];
+        $data = [
+            'title' => 'Login',
+            'menu' => 'false',
+        ];
         $this->view('login',$data);
     }
 }
