@@ -26,7 +26,7 @@
     <div class="card-footer">
         <div class="row">
             <div class="col-sm-6">
-                <a href="login/alta" class="btn btn-info">Nuevo usuario</a>
+                <a href="login/register" class="btn btn-info">Nuevo usuario</a>
 
                 </div>
 

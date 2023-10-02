@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Manejo de la base de datos
+ * Manejo de la Base de Datos MySQL
  */
 
-
-class MySQLdb{
-    //datos de la conexion
+class MySQLdb
+{
+    //Datos de la conexión
     private $host = 'mysql';
     private $user = 'default';
     private $pass = 'secret';
@@ -16,37 +16,35 @@ class MySQLdb{
     private static $instancia = null;
     private $db = null;
 
-    private function __construct(){
-        //funciones y mensajes que ocurren en el transcurso de operaciones con la base de datos
+    private function __construct()
+    {
         $options = [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
         ];
 
         try {
-            $this-> db = new PDO(
-                'mysql:host' . $this->host . ';dbname=' . $this->dbname,
+            $this->db = new PDO(
+                'mysql:host=' . $this->host . ';dbname=' . $this->dbname,
                 $this->user,
                 $this->pass,
                 $options
             );
-        } catch(PDOException $exception){
-            exit('La base de datos no esta accesible');
-
+        } catch (PDOException $exception) {
+            exit('La base de datos no está accesible');
         }
     }
 
-
-    public static function getInstance(){
-        if(is_null(self::$instancia)){
+    public static function getInstance()
+    {
+        if (is_null(self::$instancia)) {
             self::$instancia = new MySQLdb();
         }
         return self::$instancia;
     }
 
-    public function getDatabase(){
+    public function getDatabase()
+    {
         return $this->db;
     }
-    
 }
-?>
