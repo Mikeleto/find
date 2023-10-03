@@ -90,7 +90,7 @@
             </div>
             <div class="form-group text-left">
                 <input type="submit" value="Enviar datos" class="btn btn-success">
-                <a href="login" class="brn btn-info">Cancelar</a>
+                <a href="<?= ROOT ?>login" class="brn btn-info">Cancelar</a>
             </div>
         </form>
     </div>
