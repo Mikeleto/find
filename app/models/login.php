@@ -46,4 +46,9 @@ public function existsEmail($email)
 
         return $response;
     }
+
+    public function sendEmail($email)
+    {
+        echo $email;
+    }
 }
