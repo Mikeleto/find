@@ -22,10 +22,6 @@ public function existsEmail($email)
 
         $response = false;
         if ( ! $this->existsEmail($data['email'])) {
-            //Si no existe se inserta
-        } else {
-            //Si ya existe, no hace nada
-
             $password = hash_hmac('sha512', $data['password1'], 'elperrodesanroque');
 
             $sql = 'INSERT INTO users(first_name, last_name_1, last_name_2, email, address, city, state, postcode, country, password) VALUES (:first_name, :last_name_1, :last_name_2, :email, :address, :city, :state, :postcode, :country, :password)';
