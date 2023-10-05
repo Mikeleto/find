@@ -33,6 +33,7 @@
                 <div class="col-sm-6">
                 <a href="<?= ROOT ?>login/olvido" class="btn btn-info">¿No recuerdas la contraseña?</a>
             </div>
+            
         </div>
     </div>
 
