@@ -22,7 +22,7 @@ public function existsEmail($email)
 
         $response = false;
         if ( ! $this->existsEmail($data['email'])) {
-            $password = hash_hmac('sha512', $data['password1'], 'elperrodesanroque');
+            $password = hash_hmac('sha512', $data['password1'], 'ENCRIPTKEY');
 
             $sql = 'INSERT INTO users(first_name, last_name_1, last_name_2, email, address, city, state, postcode, country, password) VALUES (:first_name, :last_name_1, :last_name_2, :email, :address, :city, :state, :postcode, :country, :password)';
 
@@ -77,7 +77,7 @@ public function existsEmail($email)
 
     public function changePassword($id, $password)
     {
-        $pass = hash_hmac('sha512', $password, 'elperrodesanroque');
+        $pass = hash_hmac('sha512', $password, 'ENCRIPTKEY');
         $sql = 'UPDATE users SET password=:password WHERE id=:id';
         $params = [
             ':id' => $id,
@@ -94,7 +94,7 @@ public function existsEmail($email)
     {
         $errors = [];
 
-        $pass = hash_hmac('sha512', $password, 'elperrodesanroque');
+        $pass = hash_hmac('sha512', $password, 'ENCRIPTKEY');
 
         $user = $this->getUserByEmail($email);
 

@@ -309,10 +309,23 @@ class loginController extends Controller{
 
         $errors = $this->model->verifyUser($user, $password);
 
+        $dataForm = [
+            'user' => $user,
+            'password' => $password,
+            'remember' => $remember,
+        ];
+
+
         if ( ! $errors ) {
             echo 'Bienvenido';
         } else {
-            echo 'Página exclusiva para clientes registrados';
+            $data = [
+                'title' => 'Login',
+                'menu' => false,
+                'errors' => $errors,
+                'data' => $dataForm,
+            ];
+
         }
     }
 

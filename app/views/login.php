@@ -7,15 +7,18 @@
         <form action="<?= ROOT ?>login/verifyUser" method="POST">
             <div class="form-group text-left mb-2">
                 <label for="user">Usuario:</label>
-                <input type="text" name="user" class="form-control">
+                <input type="text" name="user" class="form-control"
+                       value="<?= $data['data']['user'] ?? '' ?>">
+
             </div>
             <div class="form-group text-left mb-2">
                 <label for="password">Contraseña:</label>
-                <input type="password" name="password" class="form-control">
+                value="<?= $data['data']['password'] ?? '' ?>">
             </div>
             <div class="form-group text-left mb-2">
                 <input type="checkbox" name="remember">
                 <label for="remember">Recordar</label>
+                value="<?= $data['data']['remenber'] ?? '' ?>">
                 
                 </div>
                 <div class="form-group text-left">
