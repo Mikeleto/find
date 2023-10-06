@@ -299,4 +299,21 @@ class loginController extends Controller{
         }
     }
 
+    public function verifyUser()
+    {
+        $errors = [];
+
+        $user = $_POST['user'] ?? '';
+        $password = $_POST['password'] ?? '';
+        $remember = $_POST['remember'] ?? '';
+
+        $errors = $this->model->verifyUser($user, $password);
+
+        if ( ! $errors ) {
+            echo 'Bienvenido';
+        } else {
+            echo 'Página exclusiva para clientes registrados';
+        }
+    }
+
 }
