@@ -317,7 +317,7 @@ class loginController extends Controller{
 
 
         if ( ! $errors ) {
-            echo 'Bienvenido';
+            header('location:' . ROOT . 'shop');
         } else {
             $data = [
                 'title' => 'Login',
