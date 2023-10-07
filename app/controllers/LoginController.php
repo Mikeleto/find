@@ -338,14 +338,17 @@ class loginController extends Controller{
 
 
         if ( ! $errors ) {
-            header('location:' . ROOT . 'shop');
+            $data = $this->model->getUserByEmail($user);
+            $session = new Session();
+            $session->login($data);
+
         } else {
             $data = [
-                'title' => 'Login',
-                'menu' => false,
                 'errors' => $errors,
                 'data' => $dataForm,
             ];
+
+            $this->view('login', $data);
 
         }
     }
